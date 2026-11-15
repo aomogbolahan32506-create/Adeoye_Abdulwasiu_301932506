@@ -1,0 +1,32 @@
+-- Sample Data Insertion
+INSERT INTO Guests (first_name, last_name, email, phone_number) 
+VALUES ('Adeoye', 'Omogbolahan', 'adeoye@example.com', '+2348012345678');
+
+INSERT INTO Rooms (room_number, room_type, price_per_night, status) 
+VALUES ('301', 'Deluxe Suite', 75000.00, 'Available');
+
+INSERT INTO Bookings (guest_id, room_id, check_in_date, check_out_date, total_amount, booking_status) 
+VALUES (1, 1, '2026-12-20', '2026-12-23', 225000.00, 'Confirmed');
+
+-- Complex Query: Retrieve current active/confirmed bookings with guest details and room type
+SELECT 
+    b.booking_id,
+    CONCAT(g.first_name, ' ', g.last_name) AS guest_name,
+    r.room_number,
+    r.room_type,
+    b.check_in_date,
+    b.check_out_date,
+    b.total_amount
+FROM Bookings b
+JOIN Guests g ON b.guest_id = g.guest_id
+JOIN Rooms r ON b.room_id = r.room_id
+WHERE b.booking_status = 'Confirmed';
+
+-- QUERY OPTIMIZATION & INDEXING
+-- Problem: Searching frequently by guest email can slow down large databases.
+-- Solution: Create an index on the email column.
+
+CREATE INDEX idx_guest_email ON Guests(email);
+
+-- Analyze execution plan before/after index (Syntax varies by SQL flavor, e.g., MySQL/PostgreSQL)
+EXPLAIN SELECT * FROM Guests WHERE email = 'adeoye@example.com';
