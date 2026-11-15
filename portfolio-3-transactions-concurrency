@@ -1,0 +1,25 @@
+-- Start Transaction to safely book a room and process payment atomically
+START TRANSACTION;
+
+-- Step 1: Check if room 301 is still available and lock the row for update
+SELECT status FROM Rooms WHERE room_id = 1 FOR UPDATE;
+
+-- Step 2: Insert Booking Record
+INSERT INTO Bookings (guest_id, room_id, check_in_date, check_out_date, total_amount, booking_status) 
+VALUES (1, 1, '2026-12-24', '2026-12-27', 225000.00, 'Confirmed');
+
+-- Capture the last inserted booking ID
+SET @current_booking_id = LAST_INSERT_ID();
+
+-- Step 3: Insert Payment Record
+INSERT INTO Payments (booking_id, amount_paid, payment_method) 
+VALUES (@current_booking_id, 225000.00, 'Online Transfer');
+
+-- Step 4: Update Room Status to Occupied/Reserved
+UPDATE Rooms SET status = 'Occupied' WHERE room_id = 1;
+
+-- If everything succeeds without error:
+COMMIT;
+
+-- NOTE: If an error or payment failure occurs during execution, you would run:
+-- ROLLBACK;
