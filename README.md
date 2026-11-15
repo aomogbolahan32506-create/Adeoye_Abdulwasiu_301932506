@@ -1,9 +1,36 @@
-## Portfolio Visual Evidence & Implementation Summary
+# Advanced Database Systems Portfolio (MIT 8103)
+**Student Name:** Adeoye Abdulwasiu Omogbolahan  
+**Matriculation Number:** 301932506  
+**Institution:** MIVA Open University  
+**Course:** MIT 8103 Advanced Database Systems (2026/2027 Academic Session)  
 
-| Portfolio Component | Focus Area & Description | Key Deliverables & Files | Visual Illustration / Evidence |
-| :--- | :--- | :--- | :--- |
-| **Portfolio 1**[cite: 3] | **Database Design & Modelling**<br>Relational schema and 3NF normalization for Grand Apex Hotel & Suites[cite: 3]. | `schema.sql`<br>ER Structure[cite: 3] | ![ER Diagram](portfolio-1-database-design/er_diagram.png) |
-| **Portfolio 2**[cite: 3] | **Query Processing & Optimisation**<br>Complex SQL joins, revenue reports, and index tuning[cite: 3]. | `queries_and_optimisation.sql`<br>Execution Plans[cite: 3] | ![Query Results](portfolio-2-query-optimisation/query_result.png) |
-| **Portfolio 3**[cite: 3] | **Transactions & Concurrency**<br>ACID compliance, row locking (`FOR UPDATE`), and rollback logic[cite: 3]. | `transactions.sql`<br>ACID Control Logs[cite: 3] | ![Transaction Logs](portfolio-3-transactions-concurrency/transaction_log.png) |
-| **Portfolio 4**[cite: 3] | **NoSQL & Advanced Data Models**<br>Document-oriented JSON structure for guest preferences and history[cite: 3]. | `nosql_model.json`<br>MongoDB Schema[cite: 3] | ![NoSQL Model](portfolio-4-nosql/nosql_view.png) |
-| **Portfolio 5**[cite: 3] | **Distributed & Cloud Database**<br>Multi-region cloud scaling, sharding, and replication strategy[cite: 3]. | Cloud Architecture README[cite: 3] | ![Cloud Architecture](portfolio-5-distributed-cloud/cloud_architecture.png) |
+---
+
+## Selected Case Study / Organisation
+* **Organisation Name:** Grand Apex Hotel & Suites
+* **Nature of Business:** A modern 150-room hotel facility located in Lagos providing accommodation, room service, event bookings, and guest management.
+* **Database Users:** Front desk receptionists, hotel guests, system administrators, and finance managers.
+* **Major Data Stored:** Guest profiles, room inventories, booking schedules, payment logs, and staff records.
+* **Key Operations:** Room reservation processing, availability checks by date ranges, dynamic payment processing, room status updates (Available, Occupied, Maintenance), and billing history generation.
+
+---
+
+## Repository Structure & Portfolio Components
+
+This repository is structured according to the continuous assessment requirements:
+
+* **`portfolio-1-database-design/`**  
+  * Contains the relational database schema (`schema.sql`), ER structure design, keys, foreign key constraints, and 3rd Normal Form (3NF) normalization details for Grand Apex Hotel & Suites.
+* **`portfolio-2-query-optimisation/`**  
+  * Contains complex SQL join queries, revenue calculations, sample data seeding, and query optimization evidence including indexing on frequently searched attributes (`guest_email`).
+* **`portfolio-3-transactions-concurrency/`**  
+  * Demonstrates ACID compliance, transaction control (`BEGIN TRANSACTION`, `COMMIT`, `ROLLBACK`), and concurrency management (row-level locking using `FOR UPDATE`) to prevent double-booking.
+* **`portfolio-4-nosql/`**  
+  * Provides a NoSQL document model (`nosql_model.json`) in JSON/MongoDB format, storing dynamic guest preferences, personalized stay histories, and itemized billing logs.
+* **`portfolio-5-distributed-cloud/`**  
+  * Outlines a technical architecture and deployment strategy for scaling across regional branches (Lagos, Abuja, London), covering replication strategies, horizontal sharding, and consistency models.
+
+---
+
+## Technical Reflection & References
+A detailed 3-page summary report including individual reflections and AI-use declarations has been compiled and submitted via the MIVA Open University LMS portal.
