@@ -1,0 +1,27 @@
+{
+  "guest_id": "G-98421",
+  "personal_info": {
+    "first_name": "Adeoye",
+    "last_name": "Omogbolahan",
+    "email": "adeoye@example.com",
+    "phone": "+2348012345678"
+  },
+  "preferences": {
+    "room_preference": "High Floor",
+    "dietary_restrictions": "None",
+    "special_requests": "Extra pillows, quiet room"
+  },
+  "stay_history": [
+    {
+      "booking_id": "B-501",
+      "room_number": "301",
+      "check_in": "2026-12-20",
+      "check_out": "2026-12-23",
+      "total_spent_ngn": 225000.00,
+      "billing_items": [
+        {"description": "Room Charge", "cost": 200000.00},
+        {"description": "Room Service", "cost": 25000.00}
+      ]
+    }
+  ]
+}
