@@ -1,0 +1,12 @@
+# Portfolio 5: Distributed and Cloud Database Strategy for Grand Apex Hotel & Suites
+
+## 1. Architecture Overview
+As Grand Apex expands its hotel branches across Lagos, Abuja, and London, a single centralised monolithic database will encounter high latency and availability risks. We propose a **Distributed Cloud Architecture** deployed on AWS/Azure.
+
+## 2. Replication Strategy
+* **Read/Write Splitting**: Master nodes handle booking transactions (writes), while read-only replica nodes located in regional data centers handle fast queries (room availability checks and guest profile retrieval).
+* **Consistency Model**: We apply **Eventual Consistency** for cross-region analytics and reporting, but maintain **Strong Consistency** (ACID compliant transactions) for live room bookings to prevent double-booking.
+
+## 3. Sharding Strategy
+* Databases will be **horizontally sharded by geographical region** (`region_id` or `branch_location`). 
+* For example, the Lagos branch queries target the West African database cluster, minimizing network latency for local front-desk terminals.
